@@ -23,15 +23,34 @@ function fibs(n) {
 }
 
 console.log(fibs(8)) */
-
 let results = [];
-function fibsRec(n) {
-  if (n < 2) {
-    return n;
+
+function getFib(a) {
+  if (a < 2) {
+    return a;
   } else {
-    return fibsRec(n - 1) + fibsRec(n - 2);
+    return getFib(a - 1) + getFib(a - 2);
     
   }
 }
 
-console.log(fibsRec(7));
+
+function fibsRec(n) {
+  a = n - 1;
+  if ( n <= 0 ) {
+    return "Please enter a valid number of elements to be given an answer.";
+  } else if (n == 1) {
+    results = [0];
+  } else if ( n == 2) {
+    results = [0, 1];
+  } else {
+    results = [0, 1];
+    for (let i = 2; i < n; i++) {
+      results.push(getFib(i))
+    }
+  }
+  return results;
+ 
+}
+
+console.log(fibsRec(8));
