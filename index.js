@@ -1,5 +1,8 @@
-/* let results = [];
+// Assignment 1 
+// Using iteration, write a function fibs which takes a number 
+// and returns an array containing that many numbers from the fibonacci sequence. 
 
+let results = [];
 function fibs(n) {
   if ( n <= 0 ) {
     return "Please enter a valid number of elements to be given an answer.";
@@ -22,21 +25,13 @@ function fibs(n) {
   return results;
 }
 
-console.log(fibs(8)) */
-let results = [];
+// write another method fibsRec which solves the same problem recursively.
 
 function getFib(a) {
-  if (a < 2) {
-    return a;
-  } else {
-    return getFib(a - 1) + getFib(a - 2);
-    
-  }
+  return a < 2 ? a : getFib(a - 1) + getFib(a - 2);
 }
 
-
 function fibsRec(n) {
-  a = n - 1;
   if ( n <= 0 ) {
     return "Please enter a valid number of elements to be given an answer.";
   } else if (n == 1) {
@@ -50,7 +45,6 @@ function fibsRec(n) {
     }
   }
   return results;
- 
 }
 
 console.log(fibsRec(8));
