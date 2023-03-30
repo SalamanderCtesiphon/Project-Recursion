@@ -22,4 +22,4 @@ function fibs(n) {
 
 
 
-console.log(fibs(15))
+console.log(fibs(8))
