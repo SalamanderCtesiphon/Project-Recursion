@@ -6,17 +6,20 @@ function fibs(n) {
   } else if ( n == 2) {
     results = [0, 1];
   } else {
-    let sum;
+    results = [0, 1];
+    let sum = 0;
+    let a = 0;
+    let b = 0;
     for (let i = 3; i <= n; i++) {
-      results = [0, 1];
-      sum = (i - 2) + (i - 1);
+      a = i - 2;
+      b = i - 3;      
+      sum = results[a] + results[b];
       results.push(sum);
     }
-    
   }
   return results;
 }
 
 
 
-console.log(fibs(4))
+console.log(fibs(15))
