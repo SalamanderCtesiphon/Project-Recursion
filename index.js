@@ -1,4 +1,4 @@
-let results = [];
+/* let results = [];
 
 function fibs(n) {
   if ( n <= 0 ) {
@@ -22,9 +22,9 @@ function fibs(n) {
   return results;
 }
 
-console.log(fibs(8))
+console.log(fibs(8)) */
 
-/* let results = [];
+let results = [];
 function fibsRec(n) {
   if (n < 2) {
     return n;
@@ -34,4 +34,4 @@ function fibsRec(n) {
   }
 }
 
-console.log(fibsRec(7)); */
+console.log(fibsRec(7));
