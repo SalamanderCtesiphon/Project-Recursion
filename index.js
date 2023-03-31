@@ -52,6 +52,9 @@ let leftSide = [];
 let sortItOut = [];
 
 function mergeSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
   leftSide = arr.slice(0, arr.length/ 2);
   rightSide = arr.slice(arr.length/ 2);
   
@@ -72,4 +75,4 @@ function mergeSort(arr) {
   return sortItOut;
 }
 
-mergeSort([3, 8, 4, 2, 5, 1, 7, 6]);
+mergeSort( [10, -1, 2, 5, 0, 6, 4, -5]);
