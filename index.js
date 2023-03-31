@@ -47,11 +47,14 @@ function fibsRec(n) {
   return results;
 }
 // Project: Merge Sort
+let rightSide = [];
+let leftSide = [];
 
 function mergeSort(arr) {
-  let rightSide = [];
+  leftSide = arr.slice(0, arr.length/ 2);
   rightSide = arr.slice(arr.length/ 2);
-  return rightSide;
+  console.log(`left: [${leftSide}]`);
+  console.log(`right: [${rightSide}]`);
 }
 
-console.log(mergeSort([8, 3, 4, 2, 5, 1, 7, 6]));
+mergeSort([8, 3, 4, 2, 5, 1, 7, 6]);
