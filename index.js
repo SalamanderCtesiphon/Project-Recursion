@@ -49,20 +49,27 @@ function fibsRec(n) {
 // Project: Merge Sort
 let rightSide = [];
 let leftSide = [];
+let sortItOut = [];
 
 function mergeSort(arr) {
   leftSide = arr.slice(0, arr.length/ 2);
   rightSide = arr.slice(arr.length/ 2);
- 
-  if (leftSide.length === 1 || rightSide.length <= 2) {
-    console.log('exit condition');
-    return;
-  } else {
-    mergeSort(leftSide);
-    mergeSort(rightSide);
-  }
+  
   console.log(`left: [${leftSide}]`);
   console.log(`right: [${rightSide}]`);
+ 
+  if (leftSide.length === 1 || rightSide.length < 2) {
+    if (leftSide[0] < rightSide[0]) {
+      sortItOut = leftSide.concat(rightSide);
+    } else {
+      sortItOut = rightSide.concat(leftSide);
+    }
+    return sortItOut;
+  } else {
+    mergeSort(leftSide);
+  }
+  console.log(sortItOut);
+  return sortItOut;
 }
 
-mergeSort([9, 8, 3, 4, 2, 5, 1, 7, 6]);
+mergeSort([8, 3, 4, 2, 5, 1, 7, 6]);
