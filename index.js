@@ -53,8 +53,16 @@ let leftSide = [];
 function mergeSort(arr) {
   leftSide = arr.slice(0, arr.length/ 2);
   rightSide = arr.slice(arr.length/ 2);
+ 
+  if (leftSide.length === 1 || rightSide.length <= 2) {
+    console.log('exit condition');
+    return;
+  } else {
+    mergeSort(leftSide);
+    mergeSort(rightSide);
+  }
   console.log(`left: [${leftSide}]`);
   console.log(`right: [${rightSide}]`);
 }
 
-mergeSort([8, 3, 4, 2, 5, 1, 7, 6]);
+mergeSort([9, 8, 3, 4, 2, 5, 1, 7, 6]);
