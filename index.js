@@ -47,7 +47,7 @@ function fibsRec(n) {
   return results;
 }
 // Project: Merge Sort
-let rightSide = [];
+/* let rightSide = [];
 let leftSide = [];
 let sortItOut = [];
 
@@ -57,9 +57,6 @@ function mergeSort(arr) {
   }
   leftSide = arr.slice(0, arr.length/ 2);
   rightSide = arr.slice(arr.length/ 2);
-  
-  console.log(`left: [${leftSide}]`);
-  console.log(`right: [${rightSide}]`);
  
   if (leftSide.length === 1 || rightSide.length < 2) {
     if (leftSide[0] < rightSide[0]) {
@@ -75,4 +72,39 @@ function mergeSort(arr) {
   return sortItOut;
 }
 
-mergeSort( [10, -1, 2, 5, 0, 6, 4, -5]);
+mergeSort( [10, -1, 2, 5, 0, 6, 4, -5]); */
+
+// Merge Sort Implentation (Recursion)
+function mergeSort (unsortedArray) {
+  if (unsortedArray.length <= 1) {
+    return unsortedArray;
+  }
+  const middle = Math.floor(unsortedArray.length / 2);
+
+  const left = unsortedArray.slice(0, middle);
+  const right = unsortedArray.slice(middle);
+
+  return merge(
+    mergeSort(left), mergeSort(right)
+  );
+}
+
+function merge (left, right) {
+  let resultArray = [], leftIndex = 0, rightIndex = 0;
+
+  while (leftIndex < left.length && rightIndex < right.length) {
+    if (left[leftIndex] < right[rightIndex]) {
+      resultArray.push(left[leftIndex]);
+      leftIndex++; 
+    } else {
+      resultArray.push(right[rightIndex]);
+      rightIndex++; 
+    }
+  }
+
+  return resultArray
+          .concat(left.slice(leftIndex))
+          .concat(right.slice(rightIndex));
+}
+
+console.log(mergeSort( [10, -1, 2, 5, 0, 6, 4, -5]));
