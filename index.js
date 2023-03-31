@@ -48,6 +48,10 @@ function fibsRec(n) {
 }
 // Project: Merge Sort
 
-function mergeSort() {
-  
+function mergeSort(arr) {
+  let rightSide = [];
+  rightSide = arr.slice(arr.length/ 2);
+  return rightSide;
 }
+
+console.log(mergeSort([8, 3, 4, 2, 5, 1, 7, 6]));
