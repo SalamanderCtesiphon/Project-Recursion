@@ -46,5 +46,8 @@ function fibsRec(n) {
   }
   return results;
 }
-console.log(fibsRec(8))
 // Project: Merge Sort
+
+function mergeSort() {
+  
+}
