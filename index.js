@@ -72,4 +72,4 @@ function mergeSort(arr) {
   return sortItOut;
 }
 
-mergeSort([8, 3, 4, 2, 5, 1, 7, 6]);
+mergeSort([3, 8, 4, 2, 5, 1, 7, 6]);
